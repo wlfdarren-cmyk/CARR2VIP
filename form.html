@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire - CARR2VIP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="form-title">Formulaire</h1>
+        <p id="form-description">Remplissez les informations ci-dessous.</p>
+
+        <form id="main-form" enctype="multipart/form-data">
+            <!-- Section Propriétaire (masquée pour l'artisan) -->
+            <div id="proprietaire-section" class="form-section">
+                <h2>📌 Informations sur le bien</h2>
+
+                <div class="form-group">
+                    <label for="nomProprietaire">Nom du propriétaire *</label>
+                    <input type="text" id="nomProprietaire" name="nomProprietaire" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailProprietaire">Email *</label>
+                    <input type="email" id="emailProprietaire" name="emailProprietaire" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="adresseBien">Adresse du bien *</label>
+                    <textarea id="adresseBien" name="adresseBien" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="typeBien">Type de bien *</label>
+                    <select id="typeBien" name="typeBien" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="maison">Maison</option>
+                        <option value="appartement">Appartement</option>
+                        <option value="local">Local commercial</option>
+                        <option value="terrain">Terrain</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="surface">Surface (m²) *</label>
+                    <input type="number" id="surface" name="surface" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="anneeConstruction">Année de construction</label>
+                    <input type="number" id="anneeConstruction" name="anneeConstruction">
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionBien">Description du bien</label>
+                    <textarea id="descriptionBien" name="descriptionBien"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="objectif">Objectif *</label>
+                    <select id="objectif" name="objectif" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="vente">Vente</option>
+                        <option value="location">Location</option>
+                        <option value="renovation">Rénovation</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget estimé (€)</label>
+                    <input type="number" id="budget" name="budget">
+                </div>
+
+                <div class="form-group">
+                    <label for="photos">Photos du bien (optionnel)</label>
+                    <input type="file" id="photos" name="photos" accept="image/*" multiple>
+                </div>
+            </div>
+
+            <!-- Section Artisan (masquée pour les propriétaires) -->
+            <div id="artisan-section" class="form-section">
+                <h2>💰 Devis</h2>
+
+                <div class="form-group">
+                    <label for="nomArtisan">Nom de l'artisan *</label>
+                    <input type="text" id="nomArtisan" name="nomArtisan" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="entreprise">Entreprise *</label>
+                    <input type="text" id="entreprise" name="entreprise" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailArtisan">Email *</label>
+                    <input type="email" id="emailArtisan" name="emailArtisan" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telephoneArtisan">Téléphone</label>
+                    <input type="tel" id="telephoneArtisan" name="telephoneArtisan">
+                </div>
+
+                <div class="form-group">
+                    <label for="bienConcerne">Bien concerné (adresse) *</label>
+                    <input type="text" id="bienConcerne" name="bienConcerne" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTravaux">Description des travaux *</label>
+                    <textarea id="descriptionTravaux" name="descriptionTravaux" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="montantDevis">Montant du devis (€) *</label>
+                    <input type="number" id="montantDevis" name="montantDevis" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateValidite">Date de validité *</label>
+                    <input type="date" id="dateValidite" name="dateValidite" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pdfDevis">Télécharger le devis (PDF) *</label>
+                    <input type="file" id="pdfDevis" name="pdfDevis" accept=".pdf" required>
+                </div>
+            </div>
+
+            <button type="submit" class="button">Envoyer</button>
+        </form>
+
+        <div id="success-message" class="hidden">
+            <h2>✅ Merci !</h2>
+            <p>Vos informations ont été envoyées avec succès.</p>
+            <a href="index.html" class="button">Retour à l'accueil</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="submit-data.js"></script>
+</body>
+</html>
