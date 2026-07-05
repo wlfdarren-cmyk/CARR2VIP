@@ -10,6 +10,11 @@
     <div class="container">
         <h1>🏡 Collaboration Immobilière - CARR2VIP</h1>
         <p>Bienvenue ! Sélectionnez votre rôle pour accéder au formulaire.</p>
+        
+        <!-- Bouton pour voir les données sauvegardées -->
+        <div style="text-align: center; margin: 20px 0;">
+            <button id="view-data-button" class="button">Voir les données sauvegardées</button>
+        </div>
 
         <div class="cards">
             <div class="card">
@@ -43,5 +48,66 @@
             </div>
         </div>
     </div>
+
+    <!-- Fenêtre modale pour afficher les données -->
+    <div id="data-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>📊 Données sauvegardées</h2>
+            <div id="data-table"></div>
+        </div>
+    </div>
+
+    <script>
+        // Afficher les données sauvegardées dans une modale
+        document.getElementById('view-data-button').addEventListener('click', function() {
+            const modal = document.getElementById('data-modal');
+            const dataTable = document.getElementById('data-table');
+            
+            // Récupérer les données
+            const data = JSON.parse(localStorage.getItem('carr2vipData')) || [];
+            
+            if (data.length === 0) {
+                dataTable.innerHTML = '<p>Aucune donnée sauvegardée pour l\'instant.</p>';
+            } else {
+                // Créer un tableau
+                let tableHTML = '<table><thead><tr>';
+                
+                // En-têtes
+                const headers = Object.keys(data[0]);
+                headers.forEach(header => {
+                    tableHTML += `<th>${header}</th>`;
+                });
+                tableHTML += '</tr></thead><tbody>';
+                
+                // Lignes de données
+                data.forEach(row => {
+                    tableHTML += '<tr>';
+                    headers.forEach(header => {
+                        tableHTML += `<td>${row[header] || '-'}</td>`;
+                    });
+                    tableHTML += '</tr>';
+                });
+                
+                tableHTML += '</tbody></table>';
+                dataTable.innerHTML = tableHTML;
+            }
+            
+            modal.classList.remove('hidden');
+        });
+
+        // Fermer la modale
+        document.querySelector('.close-button').addEventListener('click', function() {
+            document.getElementById('data-modal').classList.add('hidden');
+        });
+
+        // Fermer la modale en cliquant à l'extérieur
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('data-modal');
+            if (event.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
