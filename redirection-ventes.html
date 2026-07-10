@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portail de redirection vers les plateformes de ventes immobilières en ligne : Agorastores et Interenchères.">
+    <title>Ventes Immobilières en Ligne | Agorastores & Interenchères</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            margin: 0 15px;
+            border-radius: 8px;
+        }
+        
+        .platforms {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .platform {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .platform:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .platform img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        
+        .platform h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .platform p {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-agorastores {
+            background-color: #27ae60;
+        }
+        
+        .btn-agorastores:hover {
+            background-color: #219653;
+        }
+        
+        .btn-interencheres {
+            background-color: #e74c3c;
+        }
+        
+        .btn-interencheres:hover {
+            background-color: #c0392b;
+        }
+        
+        .custom-url {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .custom-url input {
+            width: 70%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        .custom-url button {
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .custom-url button:hover {
+            background-color: #2980b9;
+        }
+        
+        .auto-redirect {
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .auto-redirect span {
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .platforms {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .platform {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+            
+            .custom-url input {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏡 Portail des Ventes Immobilières en Ligne</h1>
+        <p>Accédez directement aux plateformes de ventes aux enchères immobilières les plus populaires en France.</p>
+        
+        <div class="platforms">
+            <!-- Agorastores -->
+            <div class="platform">
+                <img src="https://www.agorastores.com/favicon.ico" alt="Logo Agorastores" onerror="this.src='https://via.placeholder.com/80?text=A'">
+                <h3>Agorastores</h3>
+                <p>Plateforme leader des ventes immobilières en ligne pour les notaires et professionnels.</p>
+                <a href="https://www.agorastores.com" class="btn btn-agorastores">Accéder à Agorastores</a>
+            </div>
+            
+            <!-- Interenchères -->
+            <div class="platform">
+                <img src="https://www.interencheres.com/favicon.ico" alt="Logo Interenchères" onerror="this.src='https://via.placeholder.com/80?text=I'">
+                <h3>Interenchères</h3>
+                <p>Ventes aux enchères en ligne pour les biens immobiliers et autres lots.</p>
+                <a href="https://www.interencheres.com" class="btn btn-interencheres">Accéder à Interenchères</a>
+            </div>
+        </div>
+        
+        <!-- Champ pour URL personnalisée -->
+        <div class="custom-url">
+            <p>Ou entrez une URL personnalisée :</p>
+            <input type="text" id="customUrl" placeholder="Ex: https://www.agorastores.com/ventes/12345">
+            <button onclick="redirectToCustomUrl()">Aller à cette URL</button>
+        </div>
+        
+        <!-- Redirection automatique -->
+        <div class="auto-redirect">
+            <p>Vous serez redirigé automatiquement vers <span>Agorastores</span> dans <span id="countdown">5</span> secondes.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Portail de redirection pour les ventes immobilières en ligne | 2024</p>
+    </footer>
+    
+    <script>
+        // Redirection automatique vers Agorastores après 5 secondes
+        let seconds = 5;
+        const countdown = setInterval(() => {
+            seconds--;
+            document.getElementById("countdown").textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = "https://www.agorastores.com";
+            }
+        }, 1000);
+        
+        // Fonction pour rediriger vers une URL personnalisée
+        function redirectToCustomUrl() {
+            const url = document.getElementById("customUrl").value.trim();
+            if (url) {
+                // Vérifier que l'URL commence par http:// ou https://
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    alert("Veuillez entrer une URL valide (ex: https://www.agorastores.com)");
+                    return;
+                }
+                window.location.href = url;
+            } else {
+                alert("Veuillez entrer une URL.");
+            }
+        }
+        
+        // Annuler la redirection automatique si l'utilisateur interagit
+        document.addEventListener('click', () => {
+            clearInterval(countdown);
+            document.getElementById("countdown").textContent = "annulée";
+        });
+    </script>
+</body>
+</html>
