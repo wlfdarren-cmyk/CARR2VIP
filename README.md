@@ -1,3 +1,22 @@
+# CARR2VIP — Site statique prêt à déployer
+
+Ce dépôt contient un site statique (HTML/CSS/JS). Ce README décrit comment tester localement et déployer automatiquement via GitHub Actions sur GitHub Pages.
+
+**Tester localement**
+
+1. Ouvrir un terminal à la racine du projet.
+2. Lancer un serveur local :
+
+```bash
+python3 -m http.server 8000
+# puis ouvrir http://localhost:8000
+```
+
+**Déploiement automatique (GitHub Pages)**
+
+Un workflow GitHub Actions est inclus dans `.github/workflows/deploy.yml`. À chaque `push` sur `main` ou `redirection-ventes`, le contenu du dépôt est déployé sur GitHub Pages.
+
+Si vous préférez Netlify ou Vercel, je peux ajouter la configuration correspondante.
 # 🏡 Collaboration Immobilière - CARR2VIP
 
 Ce projet permet à **5 collaborateurs** (4 propriétaires + 1 artisan) de remplir des informations sur leurs biens et de déposer des devis.
@@ -93,3 +112,20 @@ function doPost(e) {
 ## 🔧 Personnalisation
 - Modifiez les champs dans `form.html` selon vos besoins.
 - Adaptez les styles dans `style.css`.
+
+**Déploiement Netlify & domaine personnalisé**
+
+- Connectez votre dépôt GitHub depuis le tableau de bord Netlify (New site from Git > GitHub > sélectionnez le repo).
+- Réglages de build : laissez la commande vide et mettez `publish directory` à `.`.
+- Branche à déployer : choisissez `main` ou `redirection-ventes` selon ce que vous voulez publier.
+- Domaine personnalisé : j'ai ajouté un fichier [CNAME](CNAME) contenant `pasdor.fr`. Sur Netlify, ajoutez `pasdor.fr` dans les paramètres du site, puis suivez les étapes de vérification.
+  - DNS recommandé : créez un enregistrement `CNAME` pour `www` pointant vers `<votre-site>.netlify.app` et ajoutez les A records pour l'apex si nécessaire (Netlify fournit les IPs et instructions dans l'UI).
+
+- Déploiement continu : chaque push vers la branche sélectionnée déclenche un nouveau déploiement sur Netlify.
+
+- Badge de déploiement : pour afficher un badge, utilisez le badge Netlify fourni dans l'onglet Deploys du site (remplacez l'URL/ID dans le Markdown du badge).
+
+Si vous voulez, je peux :
+- ajouter la configuration Vercel en plus
+- insérer un badge Netlify prêt à l'emploi (il faudra le `site id`)
+
